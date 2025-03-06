@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+:root {
+  --header: #2C3E50;
+  --bg-body: #F5F7FA;
+  --text-white: #FFF;
+  --text-primary: #2C3E50;
+  --text-secondary: #7F8C8D;
+  --button-orange: #E67E22;
+  --button-blue: #3498DB;
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border-style: none;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 5.5rem;
+  padding: 0 3rem;
+  background-color: var(--header);
+  color: var(--text-white);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+}
+
+.header .search {
+  background-color: #152739;
+  padding: 12px;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+.header .search:hover {
+  transform: rotate(90deg);
+  font-weight: bold;
+}
+
+.header i {
+  font-size: 1.5rem;
+}
+
+.main {
+  display: flex;
+  color: var(--text-white);
+  margin: 3rem;
+}
+
+.addBuku {
+  flex-basis: 60%;
+  background-color: var(--header);
+  margin-right: 3rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+.addBuku h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background-color: #152739;
+  padding: 1rem 0;
+  border-radius: 12px;
+}
+
+.addBuku .bookFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.addBuku .bookFormGroup input {
+  font-size: 1rem;
+  font-family: "Quicksand",sans-serif;
+  font-weight: 500;
+}
+
+.addBuku .bookFormSubmit {  
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: .9rem;
+  margin-top: 2.5rem;
+  padding: .5rem 1rem;
+  background-color: var(--button-blue);
+  color: var(--text-white);
+  border-radius: 5px;
+  transition: .3s;
+}
+
+.addBuku .bookFormSubmit:hover {
+  background-color: #2572a5;
+}
+
+.addBuku .bookFormGroup label {
+  font-size: 1.2rem;
+}
+
+.addBuku .bookFormGroup input {
+  border-radius: 5px;
+  padding: .7rem;
+}
+
+.bookList {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 40%;
+}
+
+.incompleteBookList {
+  margin-bottom: 1rem;
+}
+.incompleteBookList,
+.completeBookList {
+  background-color: var(--header);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+.incompleteBookList h2,
+.completeBookList h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
