@@ -32,6 +32,7 @@ body {
   padding: 0 3rem;
   background-color: var(--header);
   color: var(--text-white);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
 }
 
 .header h1 {
@@ -61,16 +62,17 @@ body {
   margin: 3rem;
 }
 
-.addBuku {
+.addBook {
   flex-basis: 60%;
+  align-self: flex-start;
   background-color: var(--header);
   margin-right: 3rem;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 2.5rem;
   border-radius: 12px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
 }
 
-.addBuku h2 {
+.addBook h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -79,7 +81,7 @@ body {
   border-radius: 12px;
 }
 
-.addBuku .bookFormGroup {
+.addBook .bookFormGroup {
   display: flex;
   flex-direction: column;
   gap: .5rem;
@@ -87,13 +89,13 @@ body {
   font-size: 1rem;
 }
 
-.addBuku .bookFormGroup input {
+.addBook .bookFormGroup input {
   font-size: 1rem;
   font-family: "Quicksand",sans-serif;
   font-weight: 500;
 }
 
-.addBuku .bookFormSubmit {  
+.addBook .bookFormSubmit {  
   display: block;
   margin: 0 auto;
   cursor: pointer;
@@ -106,15 +108,15 @@ body {
   transition: .3s;
 }
 
-.addBuku .bookFormSubmit:hover {
+.addBook .bookFormSubmit:hover {
   background-color: #2572a5;
 }
 
-.addBuku .bookFormGroup label {
+.addBook .bookFormGroup label {
   font-size: 1.2rem;
 }
 
-.addBuku .bookFormGroup input {
+.addBook .bookFormGroup input {
   border-radius: 5px;
   padding: .7rem;
 }
@@ -125,19 +127,123 @@ body {
   flex-basis: 40%;
 }
 
-.incompleteBookList {
+.bookList .incompleteBookList {
   margin-bottom: 1rem;
 }
-.incompleteBookList,
-.completeBookList {
+.bookList .incompleteBookList,
+.bookList .completeBookList {
   background-color: var(--header);
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
 }
 
-.incompleteBookList h2,
-.completeBookList h2 {
+.bookList .incompleteBookList h2,
+.bookList .completeBookList h2 {
   margin-bottom: 1.5rem;
   text-align: center;
+  background-color: #152739;
+  padding: .8rem;
+  border-radius: 8px;
+}
+
+.bookList .bookItem {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.8rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2.5px solid rgba(21, 39, 57, 0.7);
+  padding-bottom: 1.5rem;
+}
+
+.bookList .bookItem div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookList .bookItem:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.bookList .bookItem .bookItemButton {
+  display: flex;
+  flex-direction: column;
+  row-gap: .7rem;
+  justify-content: center;
+}
+
+.bookList .bookItem button {
+  background-color: var(--button-orange);
+  padding: 3px 5px;
+  border-radius: 5px;
+  font-size: 11px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.bookList .bookItem button:hover {
+  background-color: #cb2d2d;
+}
+
+.searchBookContainer {
+  position: absolute;
+  background-color: #152739;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  padding: 3rem;
+  border-radius: 10px;
+  opacity: 0;
+  transition: .3s ease;
+}
+
+.searchBookContainer.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.searchBookContainer h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+#searchBook {
+  display: flex;
+  width: 400px;
+  gap: 8px;
+}
+.searchBookContainer button,
+.searchBookContainer input {
+  font-size: 1rem;
+  font-family: "Quicksand",sans-serif;
+  padding: 4px 8px;
+}
+
+.searchBookContainer button {
+  cursor: pointer;
+  flex-wrap: nowrap;
+}
+
+.searchBookContainer input {
+  width: auto;
+  flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .addBook, 
+  .bookList {
+    width: 100%;
+  }
+
+  .bookList {
+    margin-top: 1rem;
+  }
 }
